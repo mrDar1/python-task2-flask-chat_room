@@ -1,6 +1,6 @@
-A - 
-B - 
-  
+A - Danielle Zenking
+B - Yuval Dar
+
 **Notes**  
 Port used by Flask: 5000  
 Current interface used by Flask: Localhost (127.0.0.1)  
