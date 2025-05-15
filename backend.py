@@ -14,7 +14,7 @@ os.makedirs(CHAT_FOLDER, exist_ok=True)
 def home():
 	return render_template("index.html")
 
-# implemented by Yuval
+# implemented by Yuvalb
 @app.route('/<room>', methods=['GET'])
 def get_chat(room):
     # return chat for the room or an empty string if no messages exist
