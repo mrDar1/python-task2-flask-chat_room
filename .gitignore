@@ -1,2 +1,5 @@
-chats
-venv
+chats/
+venv/
+
+pip-log.txt
+.vscode/
