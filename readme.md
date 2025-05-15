@@ -14,3 +14,11 @@ $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 $ python backend.py
+
+
+to use Dockerfile:
+$ docker build -t dan_dar -f Dockerfile-slim .
+    or use:
+    $ docker build -t dan_dar -f Dockerfile-multi .
+
+$ docker run -it --rm -p 5000:5000 dan_dar

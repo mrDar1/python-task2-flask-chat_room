@@ -1,0 +1,24 @@
+# still buggy!! work on it
+FROM python:3.12-slim AS build
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY backend.py readme.md ./
+COPY templates/ templates/
+# note: must use 2 lines!! else will coppy "templates/" not good.
+
+
+FROM python:3.12-slim
+WORKDIR /app
+COPY --from=build /app /app
+COPY --from=build /usr/local/lib/python3.12 /usr/local/lib/python3.12
+# copy built tools (change between python versions)
+
+EXPOSE 5000
+
+ENTRYPOINT [ "python", "backend.py" ]
+# note: no need for multi-stage just for fun :)
