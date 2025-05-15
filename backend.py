@@ -17,7 +17,9 @@ def home():
 @app.route('/<room>/', methods=['GET'])
 def get_chat(room):
     # return chat for the room or an empty string if no messages exist
-    return "\n".join(chats.get(room, []))
+    # return "\n".join(chats.get(room, [])) # fail option
+	return render_template("index.html")
+	
 
 
 
