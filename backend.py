@@ -14,7 +14,7 @@ def home():
 	return render_template("index.html")
 
 # implemented by Yuval
-@app.route('/api/chat/<room>', methods=['GET'])
+@app.route('/<room>/', methods=['GET'])
 def get_chat(room):
     # return chat for the room or an empty string if no messages exist
     return "\n".join(chats.get(room, []))
