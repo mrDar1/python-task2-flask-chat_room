@@ -14,13 +14,16 @@ os.makedirs(CHAT_FOLDER, exist_ok=True)
 def home():
 	return render_template("index.html")
 
+
 # implemented by Yuval
 @app.route('/<room>', methods=['GET'])
 def get_chat(room):
     # return chat for the room or an empty string if no messages exist
     # return "\n".join(chats.get(room, [])) # fail option
 	return render_template("index.html")
-	
+
+
+# implemented by Daniel
 @app.route('/api/chat/<room>', methods=['GET'])
 def get_chat_history(room):
     #Returns the full chat in a room, newline delimited
@@ -32,7 +35,8 @@ def get_chat_history(room):
     except FileNotFoundError:
         return "", 200, {'Content-Type': 'text/plain'}
     
-
+    
+# implemented by Yuval
 @app.route('/api/chat/<room>', methods=['POST'])
 def post_chat(room):
     username = request.form.get('username')
